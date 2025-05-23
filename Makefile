@@ -46,11 +46,11 @@ VERSION_BASE ?= $(shell git describe --tags --always --dirty)
 export VERBOSE ?= 0
 
 # Default architecture to build for.
-ARCH ?= amd64
+ARCH ?= arm64
 
-ALL_ARCH := amd64 arm arm64 ppc64le
+ALL_ARCH := arm64 arm arm64 ppc64le
 # Set default base image dynamically for each arch
-ifeq ($(ARCH),amd64)
+ifeq ($(ARCH),arm64)
 	BASEIMAGE?=alpine
 endif
 ifeq ($(ARCH),arm)
